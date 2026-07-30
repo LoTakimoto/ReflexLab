@@ -1,10 +1,12 @@
 const area = document.getElementById('area');
 const message = document.getElementById('message');
 const result = document.getElementById('result');
+const history = document.getElementById('history');
 
 let state = 'idle'; 
 let timer = null;
 let greenInstant = 0;
+const MAX_HISTORY = 5;
 
 function arm() {
     state = 'armed';
@@ -29,6 +31,7 @@ function registerClick() {
     area.style.background = '#b23a3a';
     message.textContent = 'click to try again';
     result.textContent = `${Math.round(reactionTimeMs)} ms`; 
+    addToHistory(reactionTimeMs);
 }
 
 function tooEarly() {
@@ -36,6 +39,16 @@ function tooEarly() {
     state = 'idle';
     area.style.background = '#6b2626';
     message.textContent = 'too early! click to try again';
+}
+
+function addToHistory(ms) {
+    const item = document.createElement('li');
+    item.textContent = `${Math.round(ms)} ms`;
+    history.prepend(item);
+
+    while(history.children.length > MAX_HISTORY) {
+        history.removeChild(history.lastChild);
+    }
 }
 
 area.addEventListener('click', () => {

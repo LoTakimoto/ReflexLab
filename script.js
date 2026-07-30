@@ -49,3 +49,5 @@ area.addEventListener('click', () => {
 }); 
 
 
+// falta programar o history, quero deixar mais fofinho e quero que apareça um cronometro quando o estado for pra verde
+// !!! botar mais funções legais -> mudar cor, efeitos sonoros, usar barra de espaço?..

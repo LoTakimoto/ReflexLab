@@ -75,9 +75,9 @@ body {
     min-height: 30px;
 }
 
-.area:focus-visible {
-    outline: 3px solid #f2a65a;
-    outline-offset: 4px ;
+.area.outlined {
+    outline: 2.5px solid #b38456;
+    outline-offset: 4px;
 }
 
 .area.early {

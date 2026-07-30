@@ -10,6 +10,7 @@ const MAX_HISTORY = 5;
 
 function arm() {
     state = 'armed';
+    area.classList.remove('outlined');
     area.style.background = '#b23a3a';
     message.textContent = 'wait for green...';
     result.textContent = '';
@@ -32,6 +33,7 @@ function registerClick() {
     message.textContent = 'click to try again';
     result.textContent = `${Math.round(reactionTimeMs)} ms`; 
     addToHistory(reactionTimeMs);
+    area.classList.add('outlined');
 }
 
 function tooEarly() {
@@ -39,6 +41,7 @@ function tooEarly() {
     state = 'idle';
     area.style.background = '#6b2626';
     message.textContent = 'too early! click to try again';
+    area.classList.add('outlined');
 }
 
 function addToHistory(ms) {
@@ -51,7 +54,7 @@ function addToHistory(ms) {
     }
 }
 
-area.addEventListener('click', () => {
+function startOrReact() {
     if (state === 'idle') {
         arm();
     } else if (state === 'armed') {
@@ -59,8 +62,17 @@ area.addEventListener('click', () => {
     } else if (state === 'ready') {
         registerClick();
     }
-}); 
+}
+
+area.addEventListener('click', startOrReact);
+
+document.addEventListener('keydown', (event) => {
+    if (event.code === 'Space' || event.code === 'Enter') {
+        event.preventDefault();
+        startOrReact();
+    }
+});
 
 
-// falta programar o history, quero deixar mais fofinho e quero que apareça um cronometro quando o estado for pra verde
-// !!! botar mais funções legais -> mudar cor, efeitos sonoros, usar barra de espaço?..
+// quero deixar mais fofinho e quero que apareça um cronometro quando o estado for pra verde
+// !!! botar mais funções legais -> mudar cor, efeitos sonoros

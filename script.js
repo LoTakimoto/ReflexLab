@@ -12,7 +12,7 @@ function arm() {
     state = 'armed';
     area.classList.remove('outlined');
     area.style.background = '#b23a3a';
-    message.textContent = 'wait for green...';
+    message.textContent = 'Wait for green...';
     result.textContent = '';
 
     const delay = 1000 + Math.random() * 3000;
@@ -22,7 +22,7 @@ function arm() {
 function getReady() {
     state = 'ready';
     area.style.background = '#2f9e63';
-    message.textContent = 'click now!';
+    message.textContent = 'REFLEX!';
     greenInstant = performance.now();
 }
 
@@ -30,7 +30,7 @@ function registerClick() {
     const reactionTimeMs = performance.now() - greenInstant;
     state = 'idle';
     area.style.background = '#b23a3a';
-    message.textContent = 'click to try again';
+    message.textContent = 'Click to try again :)';
     result.textContent = `${Math.round(reactionTimeMs)} ms`; 
     addToHistory(reactionTimeMs);
     area.classList.add('outlined');
@@ -40,19 +40,32 @@ function tooEarly() {
     clearTimeout(timer);
     state = 'idle';
     area.style.background = '#6b2626';
-    message.textContent = 'too early! click to try again';
+    message.textContent = 'Too early! Click to try again';
     area.classList.add('outlined');
 }
 
 function addToHistory(ms) {
     const item = document.createElement('li');
     item.textContent = `${Math.round(ms)} ms`;
+    item.style.background = colorForTime(ms);
     history.prepend(item);
+    
 
     while(history.children.length > MAX_HISTORY) {
         history.removeChild(history.lastChild);
     }
 }
+
+function colorForTime(ms) {
+    if (ms < 250) {
+        return '#2f9e63';
+    } else if (ms < 400) {
+        return '#b3892f';
+    } else {
+        return '#b23a3a';
+    }
+}
+
 
 function startOrReact() {
     if (state === 'idle') {

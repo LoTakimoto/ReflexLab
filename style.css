@@ -8,12 +8,27 @@ body {
     margin: 0;
     min-height: 100vh;
     background: #161A22;
-    background-size: 32px 32px;
-    color: #eef1f5;
+    color: #F2F4F8;
     font-family: 'Work Sans', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+}
+
+body::before,
+body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    width: 88px;
+    height: 100vh;
+    background: rgb(16, 18, 22);
+    opacity: 0.5;
+}
+
+body::before {
+    left: 0;
 }
 
 .screen {
@@ -26,27 +41,18 @@ body {
     max-width: 560px;
 }
 
-.title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700;
-    font-size: 32px;
-    letter-spacing: 0.5px;
-    margin: 0;
-    text-align: center;
-}
-
 .logo {
     max-width: 250px;
-    width: 280px;
+    width: 100%;
     height: auto;
-    margin-bottom: -15px;
+    margin-bottom: -10px;
 }
 
 .area {
     width: 100%;
-    height: 340px;
-    background: #b23a3a;
-    border: 10px solid #1e222b;
+    height: 280px;
+    background: #D97214;
+    border: 10px solid #34373d;
     border-radius: 14px;
     display: flex;
     flex-direction: column;
@@ -55,42 +61,38 @@ body {
     gap: 12px;
     cursor: pointer;
     user-select: none;
+    outline: none;
     box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.06),
     inset 0 12px 30px rgba(32, 30, 30, 0.25);
-}
-
-.message {
-    font-family: 'Work Sans', sans-serif;
-    font-weight: 550;
-    font-size: 18px;
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0;
-    text-align: center;
-    padding: 0 24px;
-}
-
-.result {
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 550;
-    font-size: 32px;
-    color: #f2a65a;
-    margin: 0;
-    min-height: 30px;
-}
-
-.area.outlined {
-    outline: 2.5px solid #b38456;
-    outline-offset: 4px;
 }
 
 .area.early {
     background: #6b2626;
 }
 
+.message {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 550;
+    font-size: 21px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    height: 5%;
+    padding: 0 24px;
+}
+
+.result {
+    font-family: 'IBM Plex Mono', monospace;
+    font-weight: 600;
+    font-size: 32px;
+    color: #f3cfcd;
+    margin: 0;
+    min-height: 30px;
+}
+
 .instructions {
     font-size: 14px;
-    color: #7d8590;
+    color: #9aa6b2;
     text-align: center;
     margin: 0;
 }
@@ -111,12 +113,42 @@ body {
     font-family: 'IBM Plex Mono', sans-serif;
     font-size: 13px;
     color: #eef1f5;
-    background: #1e222b;
+    background: #202633;
     border-radius: 6px;
     padding: 6px 10px;
     font-weight: 550;
 }
 
-.body:focus {
-    outline: none;
+.start-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.start-text {
+    font-size: 16px;
+    color: #9AA6B2;
+    margin: 0;
+}
+
+.start-button {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #161A22;
+    background: #F58A1F;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 32px;
+    cursor: pointer;
+}
+
+.start-button:hover {
+    background: #d97214;
+}
+
+.hidden {
+    display: none;
 }

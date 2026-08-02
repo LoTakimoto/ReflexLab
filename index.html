@@ -9,18 +9,22 @@
 <body>
 
     <main class="screen">
-        <h1 class="title">
-            <img src="assets/relflex3.png" alr="ReflexLab" class="logo" />
-        </h1>
-
-        <div id="area" class="area" role="button" tabindex="0" aria-label="Reaction time test area">
-            <p id="message" class="message">click to start</p>
-            <p id="result" class="result"></p>
+        <div id="startScreen" class="start-screen">
+            <img src="assets/relflex3.png" alt="ReflexLab" class="logo" />
+            <p class="start-text">test your reaction time!</p>
+            <button id="startButton" class="start-button">Start</button>
         </div>
 
-        <p class="instructions">click the panel, wait for it to turn green, then click as fast as you can!</p>
+        <div id="game" class="hidden">
+            <div id="area" class="area" role="button" tabindex="0" aria-label="Reaction time test area">
+                <p id="message" class="message">click to start</p>
+                <p id="result" class="result"></p>
+            </div>
 
-        <ul id="history" class="history"></ul>
+            <p class="instructions">Click the panel, wait for it to turn green, then click as fast as you can!</p>
+
+            <ul id="history" class="history"></ul>
+        </div>
     </main>
 
     <script src="script.js"></script>

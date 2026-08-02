@@ -10,8 +10,8 @@ const MAX_HISTORY = 5;
 
 function arm() {
     state = 'armed';
-    area.classList.remove('outlined');
-    area.style.background = '#b23a3a';
+    area.classList.remove('early');
+    area.style.background = '#C74D4D';
     message.textContent = 'Wait for green...';
     result.textContent = '';
 
@@ -21,7 +21,7 @@ function arm() {
 
 function getReady() {
     state = 'ready';
-    area.style.background = '#2f9e63';
+    area.style.background = '#39D98A';
     message.textContent = 'REFLEX!';
     greenInstant = performance.now();
 }
@@ -29,11 +29,10 @@ function getReady() {
 function registerClick() {
     const reactionTimeMs = performance.now() - greenInstant;
     state = 'idle';
-    area.style.background = '#b23a3a';
+    area.style.background = '#C74D4D';
     message.textContent = 'Click to try again :)';
     result.textContent = `${Math.round(reactionTimeMs)} ms`; 
     addToHistory(reactionTimeMs);
-    area.classList.add('outlined');
 }
 
 function tooEarly() {
@@ -41,7 +40,6 @@ function tooEarly() {
     state = 'idle';
     area.style.background = '#6b2626';
     message.textContent = 'Too early! Click to try again';
-    area.classList.add('outlined');
 }
 
 function addToHistory(ms) {
@@ -58,11 +56,11 @@ function addToHistory(ms) {
 
 function colorForTime(ms) {
     if (ms < 250) {
-        return '#2f9e63';
+        return '#39D98A';
     } else if (ms < 400) {
-        return '#b3892f';
+        return '#F58A1F';
     } else {
-        return '#b23a3a';
+        return '#C74D4D';
     }
 }
 
@@ -86,6 +84,11 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+const startScreen = document.getElementById('startScreen');
+const game = document.getElementById('game');
+const startButton = document.getElementById('startButton');
 
-// quero deixar mais fofinho e quero que apareça um cronometro quando o estado for pra verde
-// !!! botar mais funções legais -> mudar cor, efeitos sonoros
+startButton.addEventListener('click', () => {
+    startScreen.classList.add('hidden');
+    game.classList.remove('hidden');
+});

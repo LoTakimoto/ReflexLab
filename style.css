@@ -31,6 +31,10 @@ body::before {
     left: 0;
 }
 
+body::after {
+    right: 0;
+}
+
 .screen {
     display: flex;
     flex-direction: column;
@@ -77,24 +81,24 @@ body::before {
     font-size: 21px;
     color: rgba(255, 255, 255, 0.9);
     margin: 0;
-    height: 5%;
     padding: 0 24px;
 }
 
 .result {
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 600;
-    font-size: 32px;
+    font-size: 31px;
     color: #f3cfcd;
     margin: 0;
-    min-height: 30px;
+    min-height: 20px;
 }
 
 .instructions {
     font-size: 14px;
     color: #9aa6b2;
     text-align: center;
-    margin: 0;
+    margin: 15px 0 8px 0;
+    
 }
 
 .history {
@@ -104,7 +108,7 @@ body::before {
     gap: 8px ;
     justify-content: center;
     padding: 0;
-    margin: 0;
+    margin-top: 16px;
     width: 100%;
     opacity: 0.88;
 }

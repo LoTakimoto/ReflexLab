@@ -156,3 +156,25 @@ body::after {
 .hidden {
     display: none;
 }
+
+.button-row {
+    display: flex;
+    gap: 12px;
+}
+
+.settings-button {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: #161A22;
+    background: #F58A1F;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 32px;
+    cursor: pointer;
+}
+
+.settings-button:hover {
+    background: #d97214;
+}
+

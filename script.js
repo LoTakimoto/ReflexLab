@@ -93,8 +93,13 @@ startButton.addEventListener('click', () => {
     game.classList.remove('hidden');
 });
 
-const settingsButton = Document.getElementById('settingsButton');
+const settingsButton = document.getElementById('settingsButton');
 
 settingsButton.addEventListener('click', () => {
     alert('Coming soon!')
+});
+
+settingsButton.addEventListener('click', () => {
+    startScreen.classList.add('hidden');
+    settingsScreen.classList.remove('hidden');
 });

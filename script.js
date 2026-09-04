@@ -108,3 +108,13 @@ backButton.addEventListener('click', () => {
     settingsScreen.classList.add('hidden');
     startScreen.classList.remove('hidden');
 });
+
+const muteButton = document.getElementById('muteButton');
+
+muteButton.addEventListener('click', () => {
+    if (muteButton.textContent === 'Mute') {
+        muteButton.textContent = 'Unmute';
+    } else {
+        muteButton.textContent = 'Mute';
+    }
+});

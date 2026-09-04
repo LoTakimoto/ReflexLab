@@ -93,13 +93,18 @@ startButton.addEventListener('click', () => {
     game.classList.remove('hidden');
 });
 
+const settingsScreen = document.getElementById('settingsScreen');
 const settingsButton = document.getElementById('settingsButton');
-
-settingsButton.addEventListener('click', () => {
-    alert('Coming soon!')
-});
 
 settingsButton.addEventListener('click', () => {
     startScreen.classList.add('hidden');
     settingsScreen.classList.remove('hidden');
+});
+
+
+const backButton = document.getElementById('backButton');
+
+backButton.addEventListener('click', () => {
+    settingsScreen.classList.add('hidden');
+    startScreen.classList.remove('hidden');
 });

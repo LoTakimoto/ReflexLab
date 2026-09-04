@@ -16,11 +16,29 @@
             <button id="settingsButton" class="settings-button">Settings</button>
         </div>
 
-        <div id="settingScreen" class="hidden">
-            <h2>Settings</h2>
-            <button id="backButton">Back</button>
+        <div id="settingsScreen" class="settings-screen hidden">
+            <h2 class="settings-title">Settings</h2>
+
+            <div class="setting-row">
+                <span>Mode:</span>
+                <div class="button-row">
+                    <button id="darkModeButton" class="settings-button">Dark</button>
+                    <button id="lightModeButton" class="settings-button">Light</button>
+
+                </div>
+            </div>
+
+            <div class="setting-row">
+                <span>Sound:</span>
+                <button id="muteButton" class="settings-button">Mute</button>
+            </div>
+
+            <button id="backButton" class="settings-button">Back</button>
+            
         </div>
 
+
+         
         <div id="game" class="hidden">
             <div id="area" class="area" role="button" tabindex="0" aria-label="Reaction time test area">
                 <p id="message" class="message">click to start</p>

@@ -92,28 +92,11 @@ startButton.addEventListener('click', () => {
     startScreen.classList.add('hidden');
     game.classList.remove('hidden');
 });
-
-const settingsScreen = document.getElementById('settingsScreen');
-const settingsButton = document.getElementById('settingsButton');
-
-settingsButton.addEventListener('click', () => {
-    startScreen.classList.add('hidden');
-    settingsScreen.classList.remove('hidden');
-});
-
-
-const backButton = document.getElementById('backButton');
-
-backButton.addEventListener('click', () => {
-    settingsScreen.classList.add('hidden');
-    startScreen.classList.remove('hidden');
-});
-
 const muteButton = document.getElementById('muteButton');
 
 muteButton.addEventListener('click', () => {
     if (muteButton.textContent === 'Mute') {
-        muteButton.textContent = 'Unmute';
+        muteButton.textContent = 'Unmute';     
     } else {
         muteButton.textContent = 'Mute';
     }

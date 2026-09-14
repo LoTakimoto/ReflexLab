@@ -34,7 +34,7 @@ Each completed attempt is added to a history list (capped at 5 entries) and colo
 
 ## How to run It
 
-Live version: reflexlab.devlucas.page
+Live version: [reflexlab.devlucas.page](https://reflexlab.devlucas.page/)
 
 Or run it locally :)
 

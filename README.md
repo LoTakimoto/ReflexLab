@@ -48,6 +48,7 @@ No built steps, dependencies or installation required
 **Fonts:** Space Grotesk, IBM Plex Mono, Work Sans - all via Google Fonts. (https://fonts.google.com/specimen/Space+Grotesk) (https://fonts.google.com/specimen/IBM+Plex+Mono) (https://fonts.google.com/specimen/Work+Sans)
 
 Built with HTML, CSS and JavaScript
+
 References: W3Schools, StackOverflow
 
 

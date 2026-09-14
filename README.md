@@ -34,6 +34,10 @@ Each completed attempt is added to a history list (capped at 5 entries) and colo
 
 ## How to run It
 
+Live version: reflexlab.devlucas.page
+
+Or run it locally :)
+
 1. Clone or download this repository
 2. Open `index.html` in a browser
 

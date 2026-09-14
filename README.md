@@ -1,7 +1,7 @@
 # Reflex-Lab
 
-A minimal reaction time tester inspire by the "lights out" reaction tests Formula 1 drivers do at the start of a race :)
-Wait for the panel to turn green, then click (or press SPACE) as fast as you can.
+A reaction time tester inspired by the "lights out" reaction tests Formula 1 drivers do at the start of a race :)
+Wait for the panel to turn green, then click (or press SPACE) as fast as you can!
 
 > This project used AI for improvement suggestions, debugging help, and quick fixes along the way.
 
@@ -12,7 +12,7 @@ Wait for the panel to turn green, then click (or press SPACE) as fast as you can
 ReflexLab is my second HTML project. The first one leaned a lot on visual design I drew by hand, with fairly simple functionality behind it. 
 This time I wanted to build something from scratch myself and actually focus on the logic, without worrying too much about how it looks (CSS still isn't reaaaally my thing..)
 
-I like simple games that are easy to pick up, and I'm a big F1 fan, so this felt like a fun, small project to learn from.
+I like simple games that are easy to pick up, and I'm a big F1 fan, so this felt like a fun, small project to learn from
 
 <img src="assets/sc2.png">
 

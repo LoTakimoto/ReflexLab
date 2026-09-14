@@ -18,15 +18,15 @@ I like simple games that are easy to pick up, and I'm a big F1 fan, so this felt
 
 ## How it works
 
-The game runs on a simple state machine with three states: `idle`, `armed`, and `ready`.
+The game works with three simples states: `idle`, `armed`, and `ready`.
 
-1. **Idle** - the panel is waiting for input. Clicking it (or pressing space) arms the round.
-2. **Armed** - the panel turns red and a random delay (1-4 seconds) is scheduled with `setTimeout`. This randomness prevents the player from predicting when the panel will turn green. Clicking during this state counts as a false start ("too early").
-3. **Ready** - once the delay ends, the panel turns green and the exact timestamp is recorded using `performance.now()`. Clicking now calculates the reaction time as the difference between the click timestamp and that recorded moment, displays it, and logs it to the history list.
+1. **Idle** - the panel is waiting for you to click (ot hit space) to start a round.
+2. **Armed** - the panel turns red and waits a random amount of time (1 to 4 seconds) before going green. The randomness stops you from just guessing the timing. If you click too soon, it's a false start.
+3. **Ready** - the panel turns green and the exact moment gets saved with `performance.now()`. Click now, and it works out your reaction time by comparing that saved moment to when you actually clicked.
 
-A single function decides what a click or keypress should do based on the current state - arm the round, register a false start, or register a valid reaction time. (`startOrReact()`)
+One function, `startOrReact()`, handles all of this: it checks what state you're in and decides what a click should mean (start the round, catch a false start, or log a real reaction time)
 
-Each completed attempt is added to a history list (capped at 5 entries) and color coded based on how fast it was.
+Every attempt gets added to a little history list (last 5 only) and color coded depending on how fast it was.
 
 <img src="assets/sc3.png">
 <img src="assets/sc4.png">
